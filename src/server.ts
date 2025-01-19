@@ -2,5 +2,5 @@ import { env } from "@/env";
 import { app } from "./app";
 
 app.listen(env.PORT, () => {
-  console.log("Server running ok");
+  console.log("Server running ok", env.PORT);
 });
