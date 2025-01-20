@@ -1,8 +1,7 @@
-import { PrismaClient } from "@prisma/client";
 import cors from "cors";
 import express from "express";
 
-const prisma = new PrismaClient()
+
 
 export const app = express();
 app.use(cors());
