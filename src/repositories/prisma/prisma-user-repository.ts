@@ -17,6 +17,8 @@ export class PrismaUserRepository implements UserRepository {
   }
 }
 
+
+
 /**
  * control + clique em import { Prisma } from "@prisma/client";
  * 

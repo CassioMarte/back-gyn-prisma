@@ -12,4 +12,3 @@ app.get("/", (req, res) => {
 });
 
 
-//https://app.rocketseat.com.br/classroom/api-node-js-com-solid/group/design-patterns-and-testes/lesson/configurando-vitest

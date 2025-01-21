@@ -17,3 +17,13 @@ npx prisma migrate deploy
 suport do prisma para ver as tabelas
 npx prisma studio
 
+
+
+npm i vitest vite-tsconfig-paths -D
+vitest similar ao jest 
+vite-tsconfig-paths para compreender alias como @
+
+ "test": "vitest run",  só roda os testes
+ "test:watch": "vitest"  foda e fica obsevando
+
+  
