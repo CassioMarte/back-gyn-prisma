@@ -26,4 +26,6 @@ vite-tsconfig-paths para compreender alias como @
  "test": "vitest run",  só roda os testes
  "test:watch": "vitest"  foda e fica obsevando
 
+ npm i vitest-coverage-c8 
+
   
