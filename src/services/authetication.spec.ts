@@ -1,25 +1,29 @@
 import { inMemoryUserRepository } from "@/repositories/in-memory-repository/in-memory-user-repositori";
 import { RegisterUserService } from "@/services/register.service";
 import { User } from "@prisma/client";
+import { beforeEach } from "node:test";
 import { describe, it } from "vitest";
 
+let userMemory: inMemoryUserRepository;
+let useCase: RegisterUserService;
 
-describe("user deve poder logar", ()=>{
-  const database:User[] = []
+describe("user deve poder logar", () => {
+  const database: User[] = [];
+  // const userMemory = new inMemoryUserRepository();
+  // const useCase = new RegisterUserService(userMemory);
 
-  it("algo aqui", async()=>{
+  beforeEach(() => {
+    userMemory = new inMemoryUserRepository();
+    useCase = new RegisterUserService(userMemory);
+  });
 
-
-    const userMemory = new inMemoryUserRepository()
-    const useCase = new RegisterUserService(userMemory)
-
-    const {user} = await useCase.create({
-      name:'teste',
+  it("algo aqui", async () => {
+    const { user } = await useCase.create({
+      name: "teste",
       email: "tests@tets.com",
-      password: "123456"
-    }) 
+      password: "123456",
+    });
 
-    await this.database.push(user)
-  })
-
-})
+    await this.database.push(user);
+  });
+});

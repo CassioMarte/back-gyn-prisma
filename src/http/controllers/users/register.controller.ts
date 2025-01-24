@@ -1,12 +1,16 @@
 import { UserAlreadyExistError } from "@/errors/user-already-exist-error";
 import { PrismaUserRepository } from "@/repositories/prisma/prisma-user-repository";
+import { makeregisterUseCase } from "@/services/factory/make-register-use-service";
 import { RegisterUserService } from "@/services/register.service";
 import { registerSchema } from "@/vallidationSchema/registerSchema";
 import { Request, Response } from "express";
 
 export const register = async (req: Request, res: Response) => {
-  const userRegister = new PrismaUserRepository();
-  const registerUser = new RegisterUserService(userRegister);
+  //subistitui por função na factory
+  // const userRegister = new PrismaUserRepository();
+  // const registerUser = new RegisterUserService(userRegister);
+
+  const registerUser = makeregisterUseCase()  
 
   try {
     const { name, email, password } = registerSchema.parse(req.body);
